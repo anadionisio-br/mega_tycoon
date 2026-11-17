@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Tycoon 3D - Chicletes, Sorvetes, Forja & Cristais</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="hud">
+        <div class="stats-group">
+            <div class="stat-card cash">💵 Dinheiro: <span id="cash-value">$100</span></div>
+            <div class="stat-card rebirth">🔄 Renascimentos: <span id="rebirth-value">0</span> (<span id="mult-value">1.0x</span>)</div>
+            <div class="stat-card tier">🏭 Fábrica Nível: <span id="tier-value">0</span></div>
+            <div class="stat-card pets">🐾 Pets Ativos: <span id="pets-value">Nenhum</span></div>
+        </div>
+        <div class="controls-hint">
+            <b>WASD:</b> Andar | <b>Shift:</b> Correr | <b>Espaço:</b> Pular | <b>E:</b> Drop Manual | <b>Scroll:</b> Zoom | <b>Arrastar Mouse:</b> Câmera
+        </div>
+    </div>
+
+    <div id="event-card" hidden></div>
+    <div id="repair-alert" hidden>⚠️ MÁQUINA QUEBRADA! Procure o alerta vermelho!</div>
+
+    <div id="bottom-panel">
+        <div id="mission-card">🎯 <span id="mission-text"></span><div class="bar"><div id="mission-fill"></div></div></div>
+        <div id="stamina-card">🏃 Estamina<div class="bar"><div id="stamina-fill"></div></div></div>
+        <div class="bottom-actions">
+            <button id="btn-sound">🔊 Som: ON</button>
+            <button id="btn-reset">🗑️ Reiniciar</button>
+        </div>
+    </div>
+
+    <div id="toast-msg"></div>
+    <div id="floating-texts"></div>
+    <div id="labels-container"></div>
+    <canvas id="gameCanvas"></canvas>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
