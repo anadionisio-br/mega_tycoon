@@ -1,73 +1,42 @@
-# 🏭 Mega Tycoon 3D
+<div align="center">
 
-Construa, automatize e expanda um império industrial em 3D diretamente no navegador! Inspirado nos clássicos jogos de *tycoon* estilo Roblox, o **Mega Tycoon 3D** desafia você a gerenciar linhas de produção, desbloquear fábricas temáticas, colecionar pets e evoluir suas instalações por meio de renascimentos.
+# 👑🏭 MEGA TYCOON 3D 🍬💎
+### *Construa • Automatize • Renasça • Domine o Império Industrial!*
 
----
+![Status](https://img.shields.io/badge/Status-Jog%C3%A1vel%20no%20Navegador-4ade80?style=for-the-badge)
+![Engine](https://img.shields.io/badge/Engine-Three.js%203D-38bdf8?style=for-the-badge)
+![Estilo](https://img.shields.io/badge/Estilo-Roblox%20Tycoon-facc15?style=for-the-badge)
+![Audio](https://img.shields.io/badge/%C3%81udio-Web%20Audio%20API-c084fc?style=for-the-badge)
 
-## ✨ Principais Funcionalidades
+> **Transforme uma simples máquina de chicletes em um complexo industrial lendário!**  
+> Colecione pets raros, enfrente eventos aleatórios e renasça para desbloquear fábricas cada vez mais épicas.
 
-### 🏭 4 Fábricas Temáticas Progressivas
-Desbloqueie e automatize quatro linhas de produção exclusivas em sequência, cada uma com itens, esteiras animadas e *upgraders* próprios:
-1. **Fábrica de Chicletes:** Produza chicletes coloridos, adicione sabores, banho de carnaúba, laser ácido neon e embalagem blister.
-2. **Fábrica de Sorvetes:** Monte casquinhas com duas bolas, calda quente e cereja no topo.
-3. **Forja Medieval:** Transforme lingotes incandescentes em espadas encantadas.
-4. **Mina de Cristais:** Extraia, lapide e encante cristais arcanos de altíssimo valor.
-
-### 🔄 Sistema de Renascimento (Rebirth) e Evolução Visual
-Ao atingir o requisito de fábricas desbloqueadas e capital acumulado, você pode **Renascer** para obter multiplicadores permanentes de lucro e desbloquear melhorias visuais acumulativas em todas as fábricas (de *Oficina Básica* até *Lendária*):
-* **Nível 1:** Postes de iluminação e chaminé com fumaça dinâmica.
-* **Nível 2:** Sistema de tubulação industrial.
-* **Nível 3:** **Dropper auxiliar** (produção em dobro), painel de controle animado e sirene giratória.
-* **Nível 4:** Braços robóticos articulados e faixas luminosas nas esteiras.
-* **Nível 5:** Torre holográfica com anéis giratórios.
-* **Nível 6+:** Coroa dourada sobre o cofre e orbes luminosos orbitando a fábrica a cada nível extra.
-* **Progressão Desafiadora:** Os preços escalam exponencialmente a cada renascimento, exigindo estratégia na escolha de melhorias e pets.
-
-### ⚡ Melhorias, Pets e Missões
-* **8 Vantagens (Perks):** Evolua até o nível 3 em *Bota Turbo*, *Super Pulo*, *Tanque de Energia*, *Ímã de Coleta*, *Moeda da Sorte* e *Overclock*, além das automações exclusivas *Auto-Coletor* e *Técnico Robô*.
-* **5 Pets Permanentes:** Colecione *Cachorro*, *Gato Neon*, *Dragão*, *Fênix* e *Unicórnio* — eles seguem o personagem e mantêm seus bônus de lucro mesmo após renascer.
-* **Missões Infinitas:** Complete objetivos dinâmicos de produção, coleta e compras para ganhar recompensas extras.
-
-### 🎲 Eventos Dinâmicos, Áudio e Progresso Offline
-* **Eventos Aleatórios:** Aproveite a **Hora Dourada** (ganhos em dobro por 20 segundos) ou corra para consertar máquinas que quebram durante a produção.
-* **Áudio Sintetizado (Web Audio API):** Efeitos sonoros leves gerados em tempo real para coletas, compras, alertas e renascimentos (com botão para ativar/silenciar no painel).
-* **Ganhos Offline e Save Automático:** Seu progresso é salvo automaticamente no navegador (`localStorage`), acumulando rendimentos mesmo enquanto você estiver fora do jogo.
+</div>
 
 ---
 
-## 🎮 Controles
+## 🌟 Sobre o Jogo
 
-| Tecla / Ação | Função |
-| :--- | :--- |
-| **W, A, S, D** ou **Setas** | Movimentar o personagem |
-| **Shift** | Correr (consome barra de estamina) |
-| **Espaço** | Pular |
-| **E** | Acionar *Drop Manual* na fábrica mais próxima |
-| **Arrastar Mouse** | Girar a câmera ao redor do personagem |
-| **Roda do Mouse (Scroll)** | Aproximar ou afastar o zoom da câmera |
+**Mega Tycoon 3D** é um jogo de simulação e gerenciamento de fábricas em 3D inspirado nos clássicos *tycoons* do Roblox. Comece do zero na sua primeira linha de produção, pise nos botões luminosos para comprar melhorias, colete seus lucros e expanda seu império por **4 indústrias temáticas** diferentes!
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🏭 As 4 Fábricas Temáticas
 
-### No VS Code (Recomendado)
-1. Extraia a pasta do projeto e abra-a no **Visual Studio Code**.
-2. Instale a extensão **Live Server** (caso ainda não tenha).
-3. Clique com o botão direito no arquivo `index.html` e selecione **Open with Live Server**.
+Desbloqueie as alas em sequência e acompanhe cada produto evoluir visualmente na esteira em tempo real:
 
-> **Nota:** É necessária conexão com a internet na primeira abertura para carregar a biblioteca **Three.js** via CDN.
+| Ordem | Fábrica | Produto na Esteira | Evolução Visual dos Itens |
+| :---: | :--- | :--- | :--- |
+| **1ª** | 🍬 **Fábrica de Chicletes** | Bolinhas coloridas | Tamanho XL ➔ Brilho de Carnaúba ➔ Neon Ácido ➔ Embalagem Blister |
+| **2ª** | 🍦 **Fábrica de Sorvetes** | Casquinhas crocantes | 1ª Bola Rosa ➔ 2ª Bola Creme ➔ Calda de Chocolate ➔ Cereja no Topo |
+| **3ª** | ⚔️ **Forja Medieval** | Lingotes em brasa | Resfriamento ➔ Lâmina Afiada ➔ Empunhadura Dourada ➔ Encantamento Roxo |
+| **4ª** | 💎 **Mina de Cristais** | Cristais brutos | Lapidação ➔ Brilho Arcano ➔ Anel de Mana ➔ Orbe Dourado Orbitante |
 
 ---
 
-## 📁 Estrutura de Arquivos
+## 🔄 Sistema de Renascimento (Rebirth)
+
+Chegou longe o suficiente? Entre no **Portal de Renascimento** para multiplicar permanentemente seus ganhos e transformar a arquitetura de **todas** as suas fábricas!
 
 ```text
-Mega_Tycoon_Roblox_3D/
-├── index.html                  # Estrutura principal, HUD e importmap do Three.js
-├── README.md                   # Documentação do jogo
-├── css/
-│   └── style.css               # Estilização do HUD, placas flutuantes e animações
-└── js/
-    ├── main.js                 # Loop 3D, física, colisões, áudio, save e economia
-    └── temas/
-        └── fabricasConfig.js   # Configuração visual, preços e modelos 3D das fábricas
+Oficina Básica ➔ Iluminada ➔ Tubulada ➔ Automatizada ➔ Robotizada ➔ Holográfica ➔ 👑 LENDÁRIA
