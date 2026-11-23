@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Tycoon 3D - Fábrica & Mega Parkour Obby</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- TELA INICIAL / PERFIL E SELEÇÃO DE MODO -->
+    <section id="start-screen" class="menu-screen">
+        <div class="menu-backdrop"></div>
+        <div class="menu-content">
+            <div class="menu-brand">
+                <span class="brand-icon">🏭</span>
+                <div>
+                    <p>MEGA TYCOON 3D</p>
+                    <small>FÁBRICA INDUSTRIAL • MEGA OBBY PARKOUR</small>
+                </div>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-main">
+                    <span class="eyebrow">ESCOLHA SUA EXPERIÊNCIA</span>
+                    <h1>Sua fábrica.<br><em>Seu desafio.</em></h1>
+                    <p class="menu-description">Personalize seu personagem e escolha entre gerenciar 4 fábricas evolutivas ou encarar o Mega Parkour Obby com 24 fases, lasers, trampolins, pisos que somem e moedas aéreas!</p>
+                    
+                    <label class="field-label" for="player-name">NOME DO PERSONAGEM</label>
+                    <input id="player-name" maxlength="16" value="Jogador" placeholder="Digite seu nome">
+                    
+                    <div class="skin-heading">
+                        <div>
+                            <label class="field-label">ESCOLHA SUA SKIN</label>
+                            <small>Seu estilo acompanha você nos dois modos.</small>
+                        </div>
+                        <span id="skin-count">01 / 06</span>
+                    </div>
+                    <div id="skin-options" class="skin-options"></div>
+
+                    <div class="mode-buttons">
+                        <button id="btn-start-tycoon" class="start-button tycoon-btn">
+                            <div>
+                                <strong>🏭 ENTRAR NA FÁBRICA</strong>
+                                <small>Construa máquinas, desbloqueie alas e renasça</small>
+                            </div>
+                            <span>→</span>
+                        </button>
+                        <button id="btn-start-parkour" class="start-button parkour-btn">
+                            <div>
+                                <strong>🏁 ENTRAR NO PARKOUR</strong>
+                                <small>24 fases, lasers, trampolins, lava e moedas</small>
+                            </div>
+                            <span>→</span>
+                        </button>
+                    </div>
+                    <p class="menu-footnote">Progresso, dinheiro, pets, recordes e skins são salvos automaticamente.</p>
+                </div>
+
+                <aside class="character-card">
+                    <div class="character-card-top">
+                        <span>PRÉVIA DO AVATAR</span>
+                        <span class="online-dot">● PRONTO PARA JOGAR</span>
+                    </div>
+                    <div class="avatar-stage">
+                        <div class="avatar-glow"></div>
+                        <div id="avatar-preview" class="avatar-preview skin-classic">
+                            <div class="avatar-head"><i></i><i></i><b></b></div>
+                            <div class="avatar-body">
+                                <div class="avatar-arm left"></div>
+                                <div class="avatar-arm right"></div>
+                                <div class="avatar-torso"></div>
+                                <div class="avatar-leg left"></div>
+                                <div class="avatar-leg right"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avatar-info">
+                        <div>
+                            <small>PERSONAGEM</small>
+                            <strong id="preview-name">Jogador</strong>
+                        </div>
+                        <span id="preview-level" class="level-pill">NÍVEL 01</span>
+                    </div>
+                    <div class="avatar-stats">
+                        <div><span>🏭</span><small>4 Fábricas</small></div>
+                        <div><span>🌋</span><small>24 Fases Obby</small></div>
+                        <div><span>🔊</span><small>Efeitos 3D</small></div>
+                    </div>
+                    <p class="character-tip">NOVO NO PARKOUR <b>Pise nos trampolins cianos para voar alto, desvie dos lasers vermelhos e colete moedas douradas!</b></p>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- HUD PRINCIPAL -->
+    <div id="hud">
+        <div class="stats-group">
+            <div class="stat-card cash">💵 Dinheiro: <span id="cash-value">$100</span></div>
+            <div class="stat-card rebirth">🔄 Renascimentos: <span id="rebirth-value">0</span> (<span id="mult-value">1.0x</span>)</div>
+            <div id="card-tier" class="stat-card tier">🏭 Fábrica: <span id="tier-value">0 • Oficina Básica</span></div>
+            <div id="card-pets" class="stat-card pets">🐾 Pets: <span id="pets-value">Nenhum</span></div>
+            <div id="card-pk-wins" class="stat-card pk-stat" hidden>🏆 Vitórias: <span id="pk-wins-value">0</span> | ⏱️ <span id="pk-timer-value">0.0s</span></div>
+        </div>
+
+        <div class="controls-hint">
+            <div class="hud-actions">
+                <button id="btn-switch-mode" class="mode-switch-btn">🏁 Ir para Parkour</button>
+                <button id="btn-sound" class="profile-button" title="Ativar/Desativar Som">🔊 Som ON</button>
+                <button id="btn-profile" class="profile-button">👤 Perfil</button>
+            </div>
+            <div id="controls-text">
+                <b>WASD / Setas:</b> Andar | <b>Shift:</b> Correr | <b>Espaço:</b> Pular | <b>Arrastar Mouse:</b> Girar Câmera
+            </div>
+        </div>
+    </div>
+
+    <!-- PAINEL ESPECÍFICO DO MEGA PARKOUR -->
+    <div id="parkour-card" hidden>
+        <div class="pk-header">
+            <strong id="parkour-zone-badge">🏁 ZONA 1: INÍCIO CELESTIAL</strong>
+            <span id="parkour-reward-badge">Prêmio Final: $1.200</span>
+        </div>
+        <span id="parkour-text">Etapa 1/24 • Recorde: --</span>
+        <div class="pk-progress-bar"><div id="pk-progress-fill"></div></div>
+        <div class="pk-actions">
+            <button id="btn-pk-checkpoint" class="pk-mini-btn">↩️ Checkpoint (R)</button>
+            <button id="btn-pk-restart" class="pk-mini-btn">🔄 Reiniciar Tudo</button>
+        </div>
+    </div>
+
+    <!-- EVENTO ALEATÓRIO (TYCOON) -->
+    <div id="event-card" hidden></div>
+
+    <!-- PAINEL INFERIOR -->
+    <div id="bottom-panel">
+        <div id="mission-card">🎯 <span id="mission-text"></span><div class="bar"><div id="mission-fill"></div></div></div>
+        <div id="stamina-card">🏃 Estamina<div class="bar"><div id="stamina-fill"></div></div></div>
+        <button id="btn-reset">🗑️ Reiniciar Save</button>
+    </div>
+
+    <div id="toast-msg"></div>
+    <div id="labels-container"></div>
+    <canvas id="gameCanvas"></canvas>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
